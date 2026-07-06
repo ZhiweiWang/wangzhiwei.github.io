@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: https://ZhiweiWang.github.io/academic-cv/sitemap.xml
