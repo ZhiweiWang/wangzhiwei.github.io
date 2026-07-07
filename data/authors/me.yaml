@@ -15,7 +15,7 @@ status:
   # icon: "☕️"
 role: Associate Professor
 bio: |
-  Zhiwei Wang is an Associate Research Professor at the Institute of Information Engineering, Chinese Academy of Sciences. He received his B.E. degree from Qufu Normal University in 2016, his M.E. degree from the Automation Research and Design Institute of Metallurgical Industry in 2019, and his Ph.D. degree in Cyberspace Security from the University of Chinese Academy of Sciences in 2024. During his Ph.D. study, he was advised by Prof. [Rui Hou](http://hourui-arch.net/). His research focuses on privacy-preserving computing, with particular emphasis on GPU acceleration for fully homomorphic encryption, cryptographic algorithm optimization, and algorithm–architecture co-design.
+  Zhiwei Wang is an Associate Professor at the Institute of Information Engineering, Chinese Academy of Sciences. He received his B.E. degree from Qufu Normal University in 2016, his M.E. degree from the Automation Research and Design Institute of Metallurgical Industry in 2019, and his Ph.D. degree in Cyberspace Security from the University of Chinese Academy of Sciences in 2024. During his Ph.D. study, he was advised by Prof. [Rui Hou](http://hourui-arch.net/). His research focuses on privacy-preserving computing, with particular emphasis on GPU acceleration for fully homomorphic encryption, cryptographic algorithm optimization, and algorithm–architecture co-design.
 
 affiliations:
   - name: Institute of Information Engineering, CAS
