@@ -1,1 +1,30 @@
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		var externalUrl = "https://arxiv.org/pdf/2212.14191";
+
+		// Route all TensorFHE publication title links to the provided external URL.
+		var tensorSelectors = [
+			'a[href="/publications/tensorfhe/"]',
+			'a[href="https://zhiweiwang.github.io/publications/tensorfhe/"]'
+		];
+
+		document.querySelectorAll(tensorSelectors.join(",")).forEach(function (a) {
+			a.setAttribute("href", externalUrl);
+			a.setAttribute("target", "_blank");
+			a.setAttribute("rel", "noopener noreferrer");
+		});
+
+		// Bold the user's name in publication author lines.
+		var authorContainers = document.querySelectorAll(".article-metadata, .text-zinc-500, .text-zinc-600, .text-zinc-700");
+		authorContainers.forEach(function (el) {
+			if (el.childElementCount > 0) {
+				return;
+			}
+			var text = el.textContent || "";
+			if (text.includes("Zhiwei Wang")) {
+				el.innerHTML = text.replace(/Zhiwei Wang/g, "<strong>Zhiwei Wang</strong>");
+			}
+		});
+	});
+</script>
