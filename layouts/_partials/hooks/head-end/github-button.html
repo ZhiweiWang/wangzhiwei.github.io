@@ -15,15 +15,20 @@
 			a.setAttribute("rel", "noopener noreferrer");
 		});
 
-		// Bold the user's name in publication author lines.
-		var authorContainers = document.querySelectorAll(".article-metadata, .text-zinc-500, .text-zinc-600, .text-zinc-700");
-		authorContainers.forEach(function (el) {
-			if (el.childElementCount > 0) {
-				return;
-			}
-			var text = el.textContent || "";
-			if (text.includes("Zhiwei Wang")) {
-				el.innerHTML = text.replace(/Zhiwei Wang/g, "<strong>Zhiwei Wang</strong>");
+		// Remove clickable author links in citation view and keep names as plain text.
+		document.querySelectorAll(".li-cite-author a").forEach(function (a) {
+			var textNode = document.createTextNode(a.textContent || "");
+			a.replaceWith(textNode);
+		});
+
+		// Remove footnote-like markers such as (0001).
+		document.querySelectorAll(".li-cite-author").forEach(function (authorLine) {
+			var sibling = authorLine.nextSibling;
+			while (sibling) {
+				if (sibling.nodeType === Node.TEXT_NODE) {
+					sibling.textContent = (sibling.textContent || "").replace(/\(\d{4}\)\.?/g, "");
+				}
+				sibling = sibling.nextSibling;
 			}
 		});
 	});
