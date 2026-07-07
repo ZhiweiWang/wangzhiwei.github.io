@@ -1,13 +1,4 @@
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-<style>
-	:root {
-		--hb-font-heading: Arial, Helvetica, sans-serif;
-		--hb-font-body: Arial, Helvetica, sans-serif;
-		--hb-font-nav: Arial, Helvetica, sans-serif;
-		--hb-font-code: Arial, Helvetica, sans-serif;
-		--hb-font-family-sans: Arial, Helvetica, sans-serif;
-	}
-</style>
 <script>
 	document.addEventListener("DOMContentLoaded", function () {
 		var publicationLinkMap = {
@@ -55,6 +46,10 @@
 			authorLine.innerHTML = authorLine.innerHTML.replace(
 				/\bZhiwei Wang\b/g,
 				"<strong>Zhiwei Wang</strong>"
+			);
+			authorLine.innerHTML = authorLine.innerHTML.replace(
+				/\bRui Hou\b/g,
+				"<span style=\"color:#2563eb\">Rui Hou</span>"
 			);
 		});
 
@@ -123,6 +118,13 @@
 					parent.appendChild(item);
 				});
 			});
+		});
+
+		// Match the Interests badge text size to the Education heading scale.
+		document.querySelectorAll('#section-resume-biography-3 .flex.flex-wrap.gap-3 .inline-block').forEach(function (item) {
+			item.style.fontSize = '1.25rem';
+			item.style.lineHeight = '1.75rem';
+			item.style.fontWeight = '700';
 		});
 	});
 </script>
