@@ -1,5 +1,5 @@
 ---
-title: "**Maverick: Rethinking TFHE Bootstrapping on GPUs via Algorithm-Hardware Co-Design**"
+title: "Maverick: Rethinking TFHE Bootstrapping on GPUs via Algorithm-Hardware Co-Design"
 authors:
   - Zhiwei Wang
   - Haoqi He

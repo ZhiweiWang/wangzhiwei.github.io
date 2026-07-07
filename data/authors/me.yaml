@@ -47,12 +47,12 @@ education:
     institution: Institute of Information Engineering, Chinese Academy of Sciences
     start: 2019-09-01
     end: 2024-01-01
-    summary: |
-      Thesis on scaling laws for neural language models. Published 5 papers in NeurIPS and ICML.
-    button:
-      text: Download dissertation
-      url: /resume.pdf
-      icon: hero/arrow-down-tray
+    # summary: |
+    #   Thesis on scaling laws for neural language models. Published 5 papers in NeurIPS and ICML.
+    # button:
+    #   text: Download dissertation
+    #   url: /resume.pdf
+    #   icon: hero/arrow-down-tray
   - degree: MS Computer Science
     institution: Automation Research and Design Institute of Metallurgical Industry
     start: 2016-09-01
