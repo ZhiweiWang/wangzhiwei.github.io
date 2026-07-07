@@ -47,10 +47,6 @@
 				/\bZhiwei Wang\b/g,
 				"<strong>Zhiwei Wang</strong>"
 			);
-			authorLine.innerHTML = authorLine.innerHTML.replace(
-				/\bRui Hou\b/g,
-				"<span style=\"color:#2563eb\">Rui Hou</span>"
-			);
 		});
 
 		// Remove footnote-like markers such as (0001).
@@ -120,11 +116,17 @@
 			});
 		});
 
-		// Match the Interests badge text size to the Education heading scale.
+		// Match Interests keywords to the author bio text scale.
 		document.querySelectorAll('#section-resume-biography-3 .flex.flex-wrap.gap-3 .inline-block').forEach(function (item) {
-			item.style.fontSize = '1.25rem';
-			item.style.lineHeight = '1.75rem';
-			item.style.fontWeight = '700';
+			item.classList.add('sm:text-lg', 'leading-relaxed');
+		});
+
+		// Match the Interests heading to the Professional Summary heading scale.
+		document.querySelectorAll('#section-resume-biography-3 h3').forEach(function (heading) {
+			if ((heading.textContent || '').trim() !== 'Interests') {
+				return;
+			}
+			heading.className = 'text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white tracking-tight';
 		});
 
 		// Hide the Education block on the homepage bio section.
