@@ -10,7 +10,7 @@ authors:
   - Xuan Ding
   - Dan Meng
   - Rui Hou
-date: ""
+date: 2025-01-01
 publication_types: ['paper-conference']
 publication:
   name: "Proceedings of the 2025 ACM SIGSAC Conference on Computer and Communications Security. **CCS 2025**"

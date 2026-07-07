@@ -7,7 +7,7 @@ authors:
   - Rui Hou
   - Dan Meng
   - Mingzhe Zhang
-date: ""
+date: 2023-01-01
 publication_types: ['paper-conference']
 publication:
   name: "2023 IEEE International Symposium on High-Performance Computer Architecture. **HPCA 2023**"

@@ -1,88 +1,38 @@
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script>
 	document.addEventListener("DOMContentLoaded", function () {
-		var externalUrl = "https://arxiv.org/pdf/2212.14191";
+		var publicationLinkMap = {
+			tensorfhe: "https://arxiv.org/pdf/2212.14191",
+			maverick: "https://dl.acm.org/doi/pdf/10.1145/3779212.3790186",
+			peregrine: "https://ieeexplore.ieee.org/abstract/document/11408517/",
+			chameleon: "https://ieeexplore.ieee.org/iel8/71/4359390/11146703.pdf",
+			neo: "https://dl.acm.org/doi/pdf/10.1145/3695053.3731408",
+			shiftpir: "https://dl.acm.org/doi/pdf/10.1145/3719027.3765153",
+			batchboot: "https://www.usenix.org/system/files/conference/usenixsecurity26/sec26_prepub_li-zhihao.pdf",
+			"he-booster": "https://www.usenix.org/system/files/conference/usenixsecurity26/sec26_prepub_li-zhihao.pdf",
+			herds: "https://eprint.iacr.org/2025/1804.pdf",
+			nttfusion: "https://ieeexplore.ieee.org/abstract/document/10360966/",
+			tches2024: "https://incs.ub.rub.de/index.php/TCHES/article/download/11683/11203",
+			boot_survey: "https://link.springer.com/article/10.1186/s42400-026-00571-w",
+			bootsurvey: "https://link.springer.com/article/10.1186/s42400-026-00571-w"
+		};
 
-		// Route all TensorFHE publication title links to the provided external URL.
-		var tensorSelectors = [
-			'a[href="/publications/tensorfhe/"]',
-			'a[href="https://zhiweiwang.github.io/publications/tensorfhe/"]'
-		];
-
-		document.querySelectorAll(tensorSelectors.join(",")).forEach(function (a) {
-			a.setAttribute("href", externalUrl);
+		// Rewrite publication detail links to external paper URLs.
+		document.querySelectorAll('a[href*="/publications/"]').forEach(function (a) {
+			var href = a.getAttribute("href") || "";
+			var m = href.match(/\/publications\/([^\/#?]+)\/?/i);
+			if (!m || !m[1]) {
+				return;
+			}
+			var slug = m[1].toLowerCase();
+			var targetUrl = publicationLinkMap[slug];
+			if (!targetUrl) {
+				return;
+			}
+			a.setAttribute("href", targetUrl);
 			a.setAttribute("target", "_blank");
 			a.setAttribute("rel", "noopener noreferrer");
-		});
-
-		var maverickUrl = "https://dl.acm.org/doi/pdf/10.1145/3779212.3790186";
-		var maverickSelectors = [
-			'a[href="/publications/maverick/"]',
-			'a[href="/publications/Maverick/"]',
-			'a[href="https://zhiweiwang.github.io/publications/maverick/"]',
-			'a[href="https://zhiweiwang.github.io/publications/Maverick/"]'
-		];
-
-		document.querySelectorAll(maverickSelectors.join(",")).forEach(function (a) {
-			a.setAttribute("href", maverickUrl);
-			a.setAttribute("target", "_blank");
-			a.setAttribute("rel", "noopener noreferrer");
-		});
-
-		var peregrineUrl = "https://ieeexplore.ieee.org/abstract/document/11408517/";
-		var peregrineSelectors = [
-			'a[href="/publications/peregrine/"]',
-			'a[href="/publications/Peregrine/"]',
-			'a[href="https://zhiweiwang.github.io/publications/peregrine/"]',
-			'a[href="https://zhiweiwang.github.io/publications/Peregrine/"]'
-		];
-
-		document.querySelectorAll(peregrineSelectors.join(",")).forEach(function (a) {
-			a.setAttribute("href", peregrineUrl);
-			a.setAttribute("target", "_blank");
-			a.setAttribute("rel", "noopener noreferrer");
-		});
-
-		var chameleonUrl = "https://ieeexplore.ieee.org/iel8/71/4359390/11146703.pdf";
-		var chameleonSelectors = [
-			'a[href="/publications/chameleon/"]',
-			'a[href="/publications/Chameleon/"]',
-			'a[href="https://zhiweiwang.github.io/publications/chameleon/"]',
-			'a[href="https://zhiweiwang.github.io/publications/Chameleon/"]'
-		];
-
-		document.querySelectorAll(chameleonSelectors.join(",")).forEach(function (a) {
-			a.setAttribute("href", chameleonUrl);
-			a.setAttribute("target", "_blank");
-			a.setAttribute("rel", "noopener noreferrer");
-		});
-
-		var neoUrl = "https://dl.acm.org/doi/pdf/10.1145/3695053.3731408";
-		var neoSelectors = [
-			'a[href="/publications/neo/"]',
-			'a[href="/publications/Neo/"]',
-			'a[href="https://zhiweiwang.github.io/publications/neo/"]',
-			'a[href="https://zhiweiwang.github.io/publications/Neo/"]'
-		];
-
-		document.querySelectorAll(neoSelectors.join(",")).forEach(function (a) {
-			a.setAttribute("href", neoUrl);
-			a.setAttribute("target", "_blank");
-			a.setAttribute("rel", "noopener noreferrer");
-		});
-
-		var shiftpirUrl = "https://dl.acm.org/doi/pdf/10.1145/3719027.3765153";
-		var shiftpirSelectors = [
-			'a[href="/publications/shiftpir/"]',
-			'a[href="/publications/ShiftPIR/"]',
-			'a[href="https://zhiweiwang.github.io/publications/shiftpir/"]',
-			'a[href="https://zhiweiwang.github.io/publications/ShiftPIR/"]'
-		];
-
-		document.querySelectorAll(shiftpirSelectors.join(",")).forEach(function (a) {
-			a.setAttribute("href", shiftpirUrl);
-			a.setAttribute("target", "_blank");
-			a.setAttribute("rel", "noopener noreferrer");
+			a.style.color = "#1d4ed8";
 		});
 
 		// Remove clickable author links in citation view and keep names as plain text.
@@ -108,6 +58,62 @@
 				}
 				sibling = sibling.nextSibling;
 			}
+		});
+
+		// Group citation items by publication year and show newest year first.
+		var citationItems = Array.from(document.querySelectorAll(".pub-list-item.view-citation"));
+		var parentToItems = new Map();
+		citationItems.forEach(function (item) {
+			var parent = item.parentElement;
+			if (!parent) {
+				return;
+			}
+			if (!parentToItems.has(parent)) {
+				parentToItems.set(parent, []);
+			}
+			parentToItems.get(parent).push(item);
+		});
+
+		parentToItems.forEach(function (items, parent) {
+			if (items.length === 0) {
+				return;
+			}
+
+			var groups = {};
+			items.forEach(function (item) {
+				var yearText = (item.querySelector("em") || item).textContent || "";
+				var yearMatch = yearText.match(/\b(19|20)\d{2}\b/);
+				var year = yearMatch ? yearMatch[0] : "Other";
+				if (!groups[year]) {
+					groups[year] = [];
+				}
+				groups[year].push(item);
+			});
+
+			var years = Object.keys(groups).sort(function (a, b) {
+				if (a === "Other") {
+					return 1;
+				}
+				if (b === "Other") {
+					return -1;
+				}
+				return parseInt(b, 10) - parseInt(a, 10);
+			});
+
+			parent.innerHTML = "";
+			years.forEach(function (year) {
+				var heading = document.createElement("div");
+				heading.className = "pub-year-heading";
+				heading.style.margin = "0.75rem 0 0.25rem";
+				heading.style.fontWeight = "700";
+				heading.style.fontSize = "1.125rem";
+				heading.textContent = year;
+				parent.appendChild(heading);
+
+				groups[year].forEach(function (item) {
+					parent.appendChild(item);
+				});
+			});
 		});
 	});
 </script>

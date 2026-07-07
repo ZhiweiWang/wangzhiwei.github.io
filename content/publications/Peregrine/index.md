@@ -7,7 +7,7 @@ authors:
   - Dian Jiao
   - Dan Meng
   - Rui Hou
-date: ""
+date: 2026-01-01
 publication_types: ['paper-conference']
 publication:
   name: "2026 IEEE International Symposium on High Performance Computer Architecture. **HPCA 2026**"

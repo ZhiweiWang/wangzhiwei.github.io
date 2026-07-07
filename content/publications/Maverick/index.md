@@ -7,7 +7,7 @@ authors:
   - Qingyun Niu
   - Dan Meng
   - Rui Hou
-date: ""
+date: 2026-01-01
 publication_types: ['paper-conference']
 publication:
   name: "2026 Proceedings of the 31st ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 2. **ASPLOS 2026**"
