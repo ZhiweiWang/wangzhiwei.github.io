@@ -10,7 +10,7 @@ authors:
   - Kang Yang
   - Jiang Zhang
   - Yi Deng
-  - Yu Yu
+  - Yu Yu.
 date: 2026-01-01
 publication_types: ['paper-conference']
 publication:

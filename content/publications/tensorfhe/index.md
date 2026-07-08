@@ -6,7 +6,7 @@ authors:
   - Weizhi Xu
   - Rui Hou
   - Dan Meng
-  - Mingzhe Zhang
+  - Mingzhe Zhang.
 date: 2023-01-01
 publication_types: ['paper-conference']
 publication:

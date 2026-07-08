@@ -6,7 +6,7 @@ authors:
   - Lutan Zhao
   - Dian Jiao
   - Dan Meng
-  - Rui Hou
+  - Rui Hou*.
 date: 2026-01-01
 publication_types: ['paper-conference']
 publication:

@@ -9,7 +9,7 @@ authors:
   - Jiaxing He
   - Changzheng Wei
   - Ying Yan
-  - Lifeng Guo
+  - Lifeng Guo.
 date: 2026-01-01
 publication_types: ['paper-conference']
 publication:

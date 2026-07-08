@@ -7,7 +7,7 @@ authors:
   - Peinan Li
   - Zhihao Li
   - Dan Meng
-  - Rui Hou
+  - Rui Hou.
 date: 2025-01-01
 publication_types: ['paper-conference']
 publication:

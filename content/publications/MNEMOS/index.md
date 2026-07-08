@@ -9,7 +9,7 @@ authors:
   - Dian Jiao
   - Shengyu Fan
   - Zhiwei Wang*
-  - Mingzhe Zhang
+  - Mingzhe Zhang*.
 date: 2026-01-01
 publication_types: ['paper-conference']
 publication:

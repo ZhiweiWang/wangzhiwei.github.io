@@ -9,7 +9,7 @@ authors:
   - Yinhang Zheng
   - Lutan Zhao
   - Kunpeng Wang
-  - Rui Hou
+  - Rui Hou.
 date: 2024-01-01
 publication_types: ['paper-conference']
 publication:

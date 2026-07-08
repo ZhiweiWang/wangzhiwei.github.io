@@ -8,7 +8,7 @@ authors:
   - Yi Chen
   - Dan Meng
   - Rui Hou
-  - Mingzhe Zhang
+  - Mingzhe Zhang.
 date: 2025-01-01
 publication_types: ['paper-conference']
 publication:

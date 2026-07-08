@@ -7,7 +7,7 @@ authors:
   - Zhihao Li
   - Jiangfeng Cao
   - XiaoFeng Wang
-  - Dan Meng
+  - Dan Meng.
 date: 2023-01-01
 publication_types: ['paper-conference']
 publication:

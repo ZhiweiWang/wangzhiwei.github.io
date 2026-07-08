@@ -9,7 +9,7 @@ authors:
   - Wenzhe Lv
   - Xuan Ding
   - Dan Meng
-  - Rui Hou
+  - Rui Hou.
 date: 2025-01-01
 publication_types: ['paper-conference']
 publication:

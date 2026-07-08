@@ -4,7 +4,7 @@ authors:
   - Zhiwei Wang
   - Peinan Li
   - Rui Hou
-  - Dan Meng
+  - Dan Meng.
 date: 2023-01-01
 publication_types: ['paper-conference']
 publication:
