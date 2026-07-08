@@ -116,10 +116,34 @@
 			});
 
 			var orderedItems = Array.from(parent.querySelectorAll(".pub-list-item.view-citation"));
-			var totalCount = orderedItems.length;
+			var publicationSerialBySlug = {
+				boot_survey: 13,
+				bootsurvey: 13,
+				batchboot: 12,
+				herds: 11,
+				maverick: 10,
+				mnemos: 9,
+				peregrine: 8,
+				shiftpir: 7,
+				neo: 6,
+				chameleon: 5,
+				tches2024: 4,
+				nttfusion: 3,
+				"he-booster": 2,
+				tensorfhe: 1
+			};
 			orderedItems.forEach(function (item, idx) {
 				var titleLink = item.querySelector('a[href*="/publications/"]') || item.querySelector("a");
+				var serialValue = 13 - idx;
 				if (titleLink) {
+					var href = titleLink.getAttribute("href") || "";
+					var m = href.match(/\/publications\/([^\/#?]+)\/?/i);
+					if (m && m[1]) {
+						var slug = m[1].toLowerCase();
+						if (Object.prototype.hasOwnProperty.call(publicationSerialBySlug, slug)) {
+							serialValue = publicationSerialBySlug[slug];
+						}
+					}
 					titleLink.innerHTML = (titleLink.innerHTML || "").replace(/^\s*\[\d+\]\s*/, "");
 				}
 
@@ -130,7 +154,7 @@
 
 				var serial = document.createElement("span");
 				serial.className = "pub-serial-index";
-				serial.textContent = "[" + (totalCount - idx) + "] ";
+				serial.textContent = "[" + serialValue + "] ";
 				item.insertBefore(serial, item.firstChild);
 			});
 		});
